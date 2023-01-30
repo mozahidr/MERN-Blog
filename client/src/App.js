@@ -8,14 +8,14 @@ import { Write } from './pages/Write/Write';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const user = true;
+  const user = false;
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/register" element={user ? <Home /> : <Register />} />
-        <Route path="/login" element={user ? <Home /> : <Login />} />
+        <Route path="/auth/register" element={user ? <Home /> : <Register />} />
+        <Route path="/auth/login" element={user ? <Home /> : <Login />} />
         <Route path="/writePost" element={user ? <Write /> : <Login />} />
         <Route path="/profileSetting" element={user ? <Settings /> : <Login />} />
         <Route path="/postDetails/:postId" element={<Single />} />

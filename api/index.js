@@ -6,10 +6,13 @@ import userRoute from './routes/users.js';
 import postRouter from './routes/posts.js';
 import categoryRouter from './routes/categories.js';
 import multer from "multer";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(cors());
 
 // CONNECT TO THE DATABASE
 mongoose.set('strictQuery', true);

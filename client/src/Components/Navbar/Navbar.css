@@ -1,50 +1,100 @@
 .top {
-    width: 100%;
-    height: 50px;
-    background-color: aqua;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    font-family: 'Josefin Sans', sans-serif;
-    z-index: 999;
+  width: 100%;
+  height: 50px;
+  background-color: aqua;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  z-index: 999;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-.topLeft, .topRight{
-    flex: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.topLeft,
+.topRight {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .topIcon {
-    font-size: 18px;
-    margin: 10px;
-    cursor: pointer;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
 }
 .topImg {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .topCenter {
-    flex: 6;
+  flex: 6;
+  padding: 24px;
 }
 .topList {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  list-style: none;
 }
 .topListItems {
-    margin-right: 20px;
+  /* margin-right: 20px;
     font-size: 1.5rem;
     font-weight: 300;
     cursor: pointer;
+    background-color: red;
+    padding: 13px 10px; */
+
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
 }
-.topSearchIcon {
-    font-size: 1.5rem;
+.topListItems :hover {
+  background-color: #ffffff;
+  color: #eea200;
+  padding: 24px 10px;
+}
+/* Navbar Menu and hover effect */
+.link-3 {
+  transition: 0.4s;
+  color: #666;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0 10px;
+  margin: 0 10px;
+  display: inline;
+  cursor: pointer;
+  justify-content: center;
+}
+.link-3:hover {
+  background-color: #ffffff;
+  color: black;
+  padding: 15px 10px;
+}
+.link-1 {
+    transition: 0.3s ease;
     color: #666;
-    cursor: pointer;
-    margin-left: 15px;
+    font-size: 16px;
+    text-decoration: none;
+    border-top: 4px solid aqua;
+    border-bottom: 4px solid aqua;
+    padding: 0 0;
+    margin: 0 10px;
+  }
+  .link-1:hover {
+    border-top: 4px solid #ffffff;
+    border-bottom: 4px solid #ffffff;
+    padding: 6px 0; 
+  }
+/* Menu CSS End! */
+
+.topSearchIcon {
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  margin-left: 15px;
 }
