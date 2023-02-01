@@ -1,28 +1,35 @@
 import React from 'react';
 import './Post.css';
 import postImg from '../../images/postImg.jpg';
+import { Link } from 'react-router-dom';
 
-export const Post = () => {
+export const Post = ({ post }) => {
+  const PublicFolder = "http://localhost:5000/images/"
   return (
     <div className="post">
-      <img src={postImg} alt="postitle" className="postImg" />
+      <Link to={`/postDetails/${post._id}`} className="link">
+        <img
+          src={post.photo ? PublicFolder + post.photo : postImg}
+          alt="postitle"
+          title={post.title}
+          className="postImg"
+        />
+      </Link>
       <div className="postInfo">
         <div className="postCats">
-          <span className="postCat">Music</span>
-          <span className="postCat">Life</span>
+          {post.categories.map((cat) => (
+            <span className="postCat">{cat?.name}</span>
+          ))}
         </div>
-        <span className="postTitle">MERN blog app post title 1</span>
+        <Link to={`/postDetails/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <hr />
-        <span className="postDate">2 days ago</span>
+        <span className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
-      <p className='postDesc'>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque dolore
-        omnis ullam voluptas nisi? Ipsum quo ut culpa, ab sit quasi sequi quia
-        ducimus impedit! Dicta aliquam vero error cumque!
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque dolore
-        omnis ullam voluptas nisi? Ipsum quo ut culpa, ab sit quasi sequi quia
-        ducimus impedit! Dicta aliquam vero error cumque!
-      </p>
+      <p className="postDesc">{post.description}</p>
     </div>
   );
 };

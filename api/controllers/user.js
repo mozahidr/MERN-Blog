@@ -30,7 +30,7 @@ export const updateUser = async (req, res) => {
         },
         { new: true }
       );
-      res.status(200).json({ message: 'Updated successfully' });
+      res.status(200).json(updatedUser);
     } catch (err) {
       res.status(500).json(err);
     }

@@ -7,6 +7,11 @@
     height: 280px;
     object-fit: cover;
     border-radius: 7px;
+    cursor: pointer;
+}
+.postImg:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.4s;
 }
 .postInfo {
     display: flex;
@@ -16,7 +21,7 @@
 .postCat {
     font-family: "Varela Round", sans-serif;
     font-size: 11px;
-    color: #be9656;
+    color: black;
     line-height: 20px;
     margin-top: 15px;
     margin-right: 10px;

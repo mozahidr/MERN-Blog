@@ -2,9 +2,16 @@ import React from 'react';
 import './Navbar.css';
 import dp from '../../images/dp.jpg';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../../context/Context';
 
 export const Navbar = () => {
-  const user = false;
+  const { user, dispatch } = useContext(Context);
+  const PUBLIC_FOLDER = 'http://localhost:5000/images/';
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
   return (
     <div className="top">
       <div className="topLeft">
@@ -43,16 +50,24 @@ export const Navbar = () => {
             </li>
             <li className="link-3">
               <Link to="/" className="link">
-                Contact Us
+                Contact
               </Link>
             </li>
-            <li className="link-3">{user && 'Logout'}</li>
+            <li className="link-3" onClick={handleLogout}>
+              {user && 'Logout'}
+            </li>
           </ul>
         </div>
       </div>
       <div className="topRight">
         {user ? (
-          <img src={dp} alt="dp" className="topImg" />
+          <Link to='/profileSetting'>
+            <img
+              src={user?.profilePic ? PUBLIC_FOLDER + user.profilePic : dp}
+              alt="dp"
+              className="topImg"
+            />
+          </Link>
         ) : (
           <>
             <Link to="/auth/register" className="link-1 link lr">

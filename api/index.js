@@ -7,12 +7,21 @@ import postRouter from './routes/posts.js';
 import categoryRouter from './routes/categories.js';
 import multer from "multer";
 import cors from "cors";
+import path from "path";
+import url from "url";
 
 const app = express();
 dotenv.config();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
+
+//
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+//console.log(path.join(__dirname,'images'));
+//console.log(__filename);
+app.use("/images", express.static(path.join(__dirname,"/images")));
 
 // CONNECT TO THE DATABASE
 mongoose.set('strictQuery', true);

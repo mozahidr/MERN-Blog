@@ -45,6 +45,9 @@
     transition: 0.3s;
     opacity: 0.7;
 }
+.loginButton:disabled {
+    cursor: not-allowed;
+}
 .loginButton:hover {
     opacity: 1;
 }

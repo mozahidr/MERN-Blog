@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Sidebar.css';
 import dp from '../../images/dp.jpg';
+import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Context } from '../../context/Context';
 
 export const Sidebar = () => {
+  const { user } = useContext(Context);
+  const PUBLIC_FOLDER = 'http://localhost:5000/images/';
+  const [catName, setCatName] = useState([]);
+
+  useEffect(() => {
+    const fetCategories = async (req, res) => {
+      const response = await axios.get('/categories');
+      setCatName(response.data);
+    };
+    fetCategories();
+  }, []);
   return (
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">About Me</span>
-        <img src={dp} alt="dp" className='sidebarImg' />
+        <img src={user?.profilePic ? PUBLIC_FOLDER + user.profilePic : dp} alt="dp" className="sidebarImg" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
           molestiae consequatur laudantium dolorem.
@@ -16,13 +32,11 @@ export const Sidebar = () => {
       <div className="sidebarItem">
         <span className="sidebarTitle">Categories</span>
         <ul className="sidebarList">
-          <li className="sidebarListItem">Life</li>
-          <li className="sidebarListItem">Music</li>
-          <li className="sidebarListItem">Style</li>
-          <li className="sidebarListItem">Sport</li>
-          <li className="sidebarListItem">Tech</li>
-          <li className="sidebarListItem">Cinema</li>
-          <li className="sidebarListItem">Business</li>
+          {catName?.map((category) => (
+            <Link to={`/?category=${category.name}`} className="link">
+              <li className="sidebarListItem">{category.name}</li>
+            </Link>
+          ))}
         </ul>
       </div>
       <div className="sidebarItem">
