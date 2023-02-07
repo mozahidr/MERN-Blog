@@ -7,8 +7,8 @@ import { Context } from '../../context/Context';
 
 export const Navbar = () => {
   const { user, dispatch } = useContext(Context);
-  const PUBLIC_FOLDER = 'http://localhost:5000/images/';
-
+  //const PUBLIC_FOLDER = 'http://localhost:5000/images/';
+  const PUBLIC_FOLDER = 'https://mern-blog-4tol.onrender.com/images/';
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' });
   };

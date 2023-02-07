@@ -11,8 +11,9 @@ export const Settings = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const PUBLIC_FOLDER = 'http://localhost:5000/images/';
-
+  //const PUBLIC_FOLDER = 'http://localhost:5000/images/';
+  const PUBLIC_FOLDER = 'https://mern-blog-4tol.onrender.com/images/';
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: 'UPDATE_START' });

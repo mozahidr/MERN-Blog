@@ -14,6 +14,7 @@ export const Register = () => {
     e.preventDefault();
     setError(false);
     try {
+      // local link const response = await axios.post("/auth/register",
       const response = await axios.post("/auth/register", {
         username, email, password
       });

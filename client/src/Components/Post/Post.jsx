@@ -4,7 +4,8 @@ import postImg from '../../images/postImg.jpg';
 import { Link } from 'react-router-dom';
 
 export const Post = ({ post }) => {
-  const PublicFolder = "http://localhost:5000/images/"
+  //const PublicFolder = "http://localhost:5000/images/"
+  const PublicFolder = "https://mern-blog-4tol.onrender.com/images/"
   return (
     <div className="post">
       <Link to={`/postDetails/${post._id}`} className="link">

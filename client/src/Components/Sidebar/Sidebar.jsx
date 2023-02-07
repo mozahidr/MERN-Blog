@@ -9,7 +9,8 @@ import { Context } from '../../context/Context';
 
 export const Sidebar = () => {
   const { user } = useContext(Context);
-  const PUBLIC_FOLDER = 'http://localhost:5000/images/';
+  //const PUBLIC_FOLDER = 'http://localhost:5000/images/';
+  const PUBLIC_FOLDER = 'https://mern-blog-4tol.onrender.com/images/';
   const [catName, setCatName] = useState([]);
 
   useEffect(() => {
@@ -23,7 +24,11 @@ export const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebarItem">
         <span className="sidebarTitle">About Me</span>
-        <img src={user?.profilePic ? PUBLIC_FOLDER + user.profilePic : dp} alt="dp" className="sidebarImg" />
+        <img
+          src={user?.profilePic ? PUBLIC_FOLDER + user.profilePic : dp}
+          alt="dp"
+          className="sidebarImg"
+        />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
           molestiae consequatur laudantium dolorem.
