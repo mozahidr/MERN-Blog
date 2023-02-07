@@ -54,6 +54,11 @@ app.use('/api/users', userRoute);
 app.use('/api/posts', postRouter);
 app.use('/api/categories', categoryRouter);
 
+//
+app.get('/', async (req, res) => {
+    res.send("Hello From Mozahid");
+})
+
 app.listen("5000", () => {
     connect();
     console.log("listening on 5000");
