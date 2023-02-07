@@ -1,5 +1,6 @@
-## Full Stack Blog app
+## Full Stack MERN Blog app
 
+# Frontend 
 ## User account
   ### Register
   ### Login
@@ -7,6 +8,11 @@
 
 ## Post
   ### Create a post
+  ### Post details
   ### Update a post
   ### Delete post
 
+# Backend
+### Create api request
+### Save data to mongodb
+### Send data backend to frontend
