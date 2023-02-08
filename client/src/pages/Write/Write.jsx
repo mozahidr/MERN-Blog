@@ -32,7 +32,8 @@ export const Write = () => {
     }
     try {
       const response = await axios.post('https://mern-blog-4tol.onrender.com/api/posts', newPost);
-      window.location.replace('https://rana-mernblog.netlify.app/postDetails/' + response.data._id);
+      //window.location.replace('https://rana-mernblog.netlify.app/postDetails/' + response.data._id);
+      window.location.replace('https://rana-mernblog.netlify.app/');
     } catch (err) {
       console.log(err);
     }
