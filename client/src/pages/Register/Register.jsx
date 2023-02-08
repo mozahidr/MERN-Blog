@@ -15,7 +15,7 @@ export const Register = () => {
     setError(false);
     try {
       // local link const response = await axios.post("/auth/register",
-      const response = await axios.post("/auth/register", {
+      const response = await axios.post("https://mern-blog-4tol.onrender.com/api/auth/register", {
         username, email, password
       });
       toast('Registration successful');
