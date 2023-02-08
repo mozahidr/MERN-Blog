@@ -31,11 +31,11 @@ export const Settings = () => {
       updatedUser.profilePic = filename;
 
       try {
-        await axios.post('/upload', data);
+        await axios.post('https://mern-blog-4tol.onrender.com/api/upload', data);
       } catch (err) {}
     }
     try {
-      const res = await axios.put('/users/' + user._id, updatedUser);
+      const res = await axios.put('https://mern-blog-4tol.onrender.com/api/users/' + user._id, updatedUser);
       toast('Profile updated', {
         position: toast.POSITION.BOTTOM_CENTER,
       });
