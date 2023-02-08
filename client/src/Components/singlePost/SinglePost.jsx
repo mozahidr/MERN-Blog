@@ -20,7 +20,7 @@ export const SinglePost = () => {
 
   useEffect(() => {
     const fetchPost = async (req, res) => {
-      const response = await axios.get('/posts/' + path);
+      const response = await axios.get('https://mern-blog-4tol.onrender.com/api/posts/' + path);
       setPost(response.data);
       setTitle(response.data.title);
       setDesc(response.data.desc);
@@ -31,7 +31,7 @@ export const SinglePost = () => {
   // DELETE POST
   const handleDelete = async (req, res) => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axios.delete(`https://mern-blog-4tol.onrender.com/api/posts/${post._id}`, {
         data: { username: user.username },
       });
       toast('Delete Successful!', {
@@ -46,7 +46,7 @@ export const SinglePost = () => {
   // UPDATE POST
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axios.put(`https://mern-blog-4tol.onrender.com/api/posts/${post._id}`, {
         username: user.username,
         title,
         desc,
