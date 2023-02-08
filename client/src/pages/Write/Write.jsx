@@ -25,14 +25,14 @@ export const Write = () => {
       newPost.photo = fileName;
 
       try {
-        await axios.post('/upload', data);
+        await axios.post('https://mern-blog-4tol.onrender.com/api/upload', data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
-      const response = await axios.post('/posts', newPost);
-      window.location.replace('/postDetails/' + response.data._id);
+      const response = await axios.post('https://mern-blog-4tol.onrender.com/api/posts', newPost);
+      window.location.replace('https://rana-mernblog.netlify.app/postDetails/' + response.data._id);
     } catch (err) {
       console.log(err);
     }
