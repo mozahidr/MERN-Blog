@@ -15,7 +15,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     const fetCategories = async (req, res) => {
-      const response = await axios.get('/categories');
+      const response = await axios.get('https://mern-blog-4tol.onrender.com/api/categories');
       setCatName(response.data);
     };
     fetCategories();
