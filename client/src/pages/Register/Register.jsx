@@ -19,7 +19,7 @@ export const Register = () => {
         username, email, password
       });
       toast('Registration successful');
-      response.data && window.location.replace("/auth/login");
+      response.data && window.location.replace("https://rana-mernblog.netlify.app/auth/login");
     } catch (err) {
       setError(true);
     }
