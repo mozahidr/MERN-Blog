@@ -15,7 +15,7 @@ export const Login = () => {
     dispatch({ type: 'LOGIN_START'});
     try {
       // const response = await axios.post("/auth/login",
-      const response = await axios.post("/auth/login", {
+      const response = await axios.post("https://mern-blog-4tol.onrender.com/api/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       })
